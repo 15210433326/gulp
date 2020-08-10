@@ -22,5 +22,5 @@
 ```javascript
 npm install -g cnpm --registry=https://registry.npm.taobao.org
 
-sudo npm install -global gulp
+sudo cnpm install gulp -g
 ```
