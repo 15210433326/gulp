@@ -20,20 +20,26 @@ for (var i = pathArr.length - 4; i < pathArr.length; i++) {
   projectPath += '/' + pathArr[i];
 }
 gulp.task('css', function () {
-  return gulp.src('./css/*.css')
-    //.pipe(concat('index.css'))//合成到一个css 
+  return gulp.src(['./css/*'])
+    .pipe(concat('index.css'))//合成到一个css 
     .pipe(minifyCss())//压缩css到一行
+    .pipe(rev())
     //.pipe(concat('index.min.css'))//压缩后的css
-    .pipe(gulp.dest('./dist/css'));//输出到css目录
+    .pipe(gulp.dest('./dist/css'))//输出到css目录
+    .pipe(rev.manifest()) 
+    .pipe(gulp.dest('./rev/css'));
 });
 
 
 gulp.task('js', function () {
-  return gulp.src('./js/*.js')
-    //.pipe(concat('index.js'))//合成到一个js 
+  return gulp.src(['./js/*'])
+    .pipe(concat('index.js'))//合成到一个js 
     .pipe(uglify())//压缩js到一行
+    .pipe(rev())
     //.pipe(concat('index.min.js'))//压缩后的js
-    .pipe(gulp.dest('./dist/js'));//输出到js目录
+    .pipe(gulp.dest('./dist/js'))//输出到js目录
+    .pipe(rev.manifest()) 
+    .pipe(gulp.dest('./rev/js'));
 });
 
 gulp.task('images', function () {
