@@ -21,7 +21,7 @@ for (var i = pathArr.length - 4; i < pathArr.length; i++) {
 }
 gulp.task('css', function () {
   return gulp.src(['./css/*'])
-    .pipe(concat('index.css'))//合成到一个css 
+    //.pipe(concat('index.css'))//合成到一个css 
     .pipe(minifyCss())//压缩css到一行
     .pipe(rev())
     //.pipe(concat('index.min.css'))//压缩后的css
@@ -33,7 +33,7 @@ gulp.task('css', function () {
 
 gulp.task('js', function () {
   return gulp.src(['./js/*'])
-    .pipe(concat('index.js'))//合成到一个js 
+    //.pipe(concat('index.js'))//合成到一个js 
     .pipe(uglify())//压缩js到一行
     .pipe(rev())
     //.pipe(concat('index.min.js'))//压缩后的js
