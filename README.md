@@ -14,7 +14,7 @@
 
 2. gulp
 
-3. gulpfile.js 配置文件压缩方式，img 图片添加 MD5 后缀，css、js（混淆）、html 压缩成一行，libs 文件不做修改，直接输出；
+3. gulpfile.js 配置文件压缩方式，img 图片压缩并添加 MD5 后缀，css、js（混淆）、html 压缩成一行，libs 文件不做修改，直接输出；
 
 > MAC 需要全局安装 gulp，建议首先安装 cnpm，再安装 gulp，否则会报错；
 
