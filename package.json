@@ -21,7 +21,8 @@
     "gulp-sequence": "^0.4.5",
     "gulp-htmlmin": "^3.0.0",
     "gulp-remove-html": "^1.3.0",
-    "gulp-remove-empty-lines": "0.0.8",
+    "gulp-remove-empty-lines": "^0.0.8",
+    "gulp-smushit": "^1.2.0",
     "gulp-minify-css": "^1.2.4",
     "gulp-uglify": "^2.0.0",
     "gulp-watch": "^4.3.6"
@@ -37,7 +38,8 @@
     "gulp-sequence": "^0.4.5",
     "gulp-htmlmin": "^3.0.0",
     "gulp-remove-html": "^1.3.0",
-    "gulp-remove-empty-lines": "0.0.8",
+    "gulp-remove-empty-lines": "^0.0.8",
+    "gulp-smushit": "^1.2.0",
     "gulp-minify-css": "^1.2.4",
     "gulp-uglify": "^2.0.0",
     "gulp-watch": "^4.3.6"

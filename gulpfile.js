@@ -3,6 +3,7 @@ var htmlmin = require('gulp-htmlmin');  //html压缩组件
 var gulpRemoveHtml = require('gulp-remove-html');  //标签清除
 var uglify = require('gulp-uglify');  //js文件压缩
 var minifyCss = require('gulp-minify-css');  //压缩CSS为一行；
+var smushit = require('gulp-smushit');  //压缩图片
 var removeEmptyLines = require('gulp-remove-empty-lines');  //清除空白行
 var concat = require('gulp-concat');  //合并文件
 var clean = require('gulp-clean');  // 清理文件插件
@@ -26,7 +27,7 @@ gulp.task('css', function () {
     .pipe(rev())
     //.pipe(concat('index.min.css'))//压缩后的css
     .pipe(gulp.dest('./dist/css'))//输出到css目录
-    .pipe(rev.manifest()) 
+    .pipe(rev.manifest())
     .pipe(gulp.dest('./rev/css'));
 });
 
@@ -38,12 +39,13 @@ gulp.task('js', function () {
     .pipe(rev())
     //.pipe(concat('index.min.js'))//压缩后的js
     .pipe(gulp.dest('./dist/js'))//输出到js目录
-    .pipe(rev.manifest()) 
+    .pipe(rev.manifest())
     .pipe(gulp.dest('./rev/js'));
 });
 
 gulp.task('images', function () {
   return gulp.src(['./images/*'])
+    .pipe(smushit()) //压缩图片体积
     .pipe(rev())
     .pipe(gulp.dest('./dist/images'))
     .pipe(rev.manifest())
